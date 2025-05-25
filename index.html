@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dannys Beauty - Profesionálna Vizážistka</title>
+    <link rel="icon" href="Photo/favicon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/Own_Css/styles.css">
 </head>
@@ -11,12 +12,16 @@
 <!-- Header -->
 <header>
     <nav>
-        <a href="#" class="logo">Dannys Beauty</a>
+        <a href="#" class="logo">
+            <img src="Photo/favicon.png" alt="Dannys Beauty Logo" class="logo-img">
+            <span class="logo-text">Dannys Beauty</span>
+        </a>
         <ul class="nav-links">
             <li><a href="#home">Domov</a></li>
             <li><a href="#about">O mne</a></li>
             <li><a href="#services">Služby</a></li>
             <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="#reviews">Recenzie</a></li>
             <li><a href="#contact">Kontakt</a></li>
         </ul>
     </nav>
@@ -100,6 +105,106 @@
     </div>
 </section>
 
+<!-- Reviews Section -->
+<section id="reviews" class="reviews">
+    <h2>Recenzie Klientov</h2>
+    <div class="reviews-carousel">
+        <div class="reviews-container">
+            <!-- Review 1 -->
+            <div class="review-card">
+                <div class="review-profile">
+                    <div class="review-image">
+                        <div class="profile-circle">KM</div>
+                    </div>
+                    <div class="review-name">Katarína M.</div>
+                </div>
+                <div class="review-stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <div class="review-text">
+                    <p>Danny vytvorila dokonalý svadobný look presne podľa mojich predstáv. Líčenie vydržalo celý deň a na fotkách vyzerá úžasne. Vrelo odporúčam!</p>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="review-card">
+                <div class="review-profile">
+                    <div class="review-image">
+                        <div class="profile-circle">LB</div>
+                    </div>
+                    <div class="review-name">Lucia B.</div>
+                </div>
+                <div class="review-stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <div class="review-text">
+                    <p>Profesionálny prístup a kreatívne nápady. Danny vie, ako zvýrazniť prirodzenú krásu a pritom zachovať komfort. Určite sa vrátim!</p>
+                </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="review-card">
+                <div class="review-profile">
+                    <div class="review-image">
+                        <div class="profile-circle">MH</div>
+                    </div>
+                    <div class="review-name">Martina H.</div>
+                </div>
+                <div class="review-stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">☆</span>
+                </div>
+                <div class="review-text">
+                    <p>Večerné líčenie od Danny bolo presne to, čo som potrebovala na firemnú párty. Dostala som veľa komplimentov a cítila som sa sebavedomo celý večer.</p>
+                </div>
+            </div>
+
+            <!-- Review 4 -->
+            <div class="review-card">
+                <div class="review-profile">
+                    <div class="review-image">
+                        <div class="profile-circle">ZK</div>
+                    </div>
+                    <div class="review-name">Zuzana K.</div>
+                </div>
+                <div class="review-stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <div class="review-text">
+                    <p>Fantastická skúsenosť! Danny má neuveriteľný talent a oko pre detail. Líčenie na moju promóciu bolo elegantné a zároveň moderné.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Navigation -->
+        <div class="carousel-nav">
+            <button class="prev-btn" aria-label="Predchádzajúca recenzia">❮</button>
+            <div class="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+            </div>
+            <button class="next-btn" aria-label="Nasledujúca recenzia">❯</button>
+        </div>
+    </div>
+</section>
+
 <section id="contact" class="contact">
     <h2>Kontaktujte Ma</h2>
     <div class="contact-content">
@@ -125,5 +230,84 @@
 <footer>
     <p>&copy; 2025 Dannys Beauty. Všetky práva vyhradené.</p>
 </footer>
+
+<!-- Carousel JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get carousel elements
+        const reviewsContainer = document.querySelector('.reviews-container');
+        const reviewCards = document.querySelectorAll('.review-card');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        const dots = document.querySelectorAll('.dot');
+
+        // Set initial state
+        let currentIndex = 0;
+        const totalReviews = reviewCards.length;
+
+        // Function to update carousel position
+        function updateCarousel() {
+            reviewsContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            // Update active dot
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        // Event listeners for navigation buttons
+        prevBtn.addEventListener('click', function() {
+            currentIndex = (currentIndex === 0) ? totalReviews - 1 : currentIndex - 1;
+            updateCarousel();
+            resetAutoSlide();
+        });
+
+        nextBtn.addEventListener('click', function() {
+            currentIndex = (currentIndex === totalReviews - 1) ? 0 : currentIndex + 1;
+            updateCarousel();
+            resetAutoSlide();
+        });
+
+        // Event listeners for dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', function() {
+                currentIndex = index;
+                updateCarousel();
+                resetAutoSlide();
+            });
+        });
+
+        // Auto slide functionality
+        let autoSlideInterval;
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(function() {
+                currentIndex = (currentIndex === totalReviews - 1) ? 0 : currentIndex + 1;
+                updateCarousel();
+            }, 5000); // Change slide every 5 seconds
+        }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+
+        // Initialize auto slide
+        startAutoSlide();
+
+        // Pause auto slide when hovering over carousel
+        reviewsContainer.addEventListener('mouseenter', function() {
+            clearInterval(autoSlideInterval);
+        });
+
+        reviewsContainer.addEventListener('mouseleave', function() {
+            startAutoSlide();
+        });
+    });
+</script>
 </body>
 </html>

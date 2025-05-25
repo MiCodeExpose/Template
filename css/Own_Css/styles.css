@@ -33,11 +33,22 @@ nav {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.logo-text {
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     font-weight: 500;
     color: #eac3c9;
-    text-decoration: none;
 }
 
 .nav-links {
@@ -160,7 +171,7 @@ h2 {
     background: white;
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -233,7 +244,7 @@ h2 {
     padding: 1.5rem;
     background: white;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .contact-item h4 {
@@ -253,6 +264,14 @@ footer {
 @media (max-width: 768px) {
     .nav-links {
         display: none;
+    }
+
+    .logo-img {
+        height: 30px;
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
     }
 
     .hero-content h1 {
@@ -319,6 +338,126 @@ footer {
     font-size: 1.2rem;
 }
 
+/* Reviews Section */
+.reviews {
+    background: #fafafa;
+    padding-bottom: 6rem;
+}
+
+.reviews-carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.reviews-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.review-card {
+    min-width: 100%;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.review-image {
+    margin-bottom: 0.5rem;
+}
+
+.profile-circle {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #eac3c9 0%, #f0d0d5 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.review-name {
+    font-weight: 500;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.review-stars {
+    margin-bottom: 1rem;
+    color: #eac3c9;
+    font-size: 1.5rem;
+}
+
+.review-text {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.prev-btn, .next-btn {
+    background: #eac3c9;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background: #d4a5ab;
+    transform: scale(1.1);
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin: 0 1rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: #ddd;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #eac3c9;
+    transform: scale(1.2);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .service-price {
@@ -328,5 +467,23 @@ footer {
     .download-btn {
         padding: 0.6rem 1.2rem;
         font-size: 0.9rem;
+    }
+
+    .review-card {
+        padding: 1.5rem;
+    }
+
+    .profile-circle {
+        width: 60px;
+        height: 60px;
+        font-size: 1.2rem;
+    }
+
+    .review-stars {
+        font-size: 1.2rem;
+    }
+
+    .review-text {
+        font-size: 1rem;
     }
 }
