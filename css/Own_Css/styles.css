@@ -201,29 +201,60 @@ h2 {
 /* Portfolio Section */
 .portfolio {
     background: #fafafa;
+    padding: 3rem 2rem;
+}
+
+.portfolio-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 1.5rem;
+}
+
+.portfolio-category {
+    margin-bottom: 1rem;
+}
+
+.category-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #333;
+    margin-top: 0.5rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
 }
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    margin-top: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0;
+    margin-bottom: 0.5rem;
 }
 
 .portfolio-item {
     aspect-ratio: 1;
     background: linear-gradient(45deg, #eac3c9, #f0d0d5);
-    border-radius: 10px;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     font-weight: 500;
     transition: transform 0.3s ease;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 0;
 }
 
 .portfolio-item:hover {
     transform: scale(1.05);
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    max-height: none;
 }
 
 /* Contact Section */
@@ -257,6 +288,83 @@ h2 {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: all 0.3s ease;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    animation: zoom 0.3s ease;
+}
+
+#imgCaption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 50px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+}
+
+@keyframes zoom {
+    from {transform: scale(0.8); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #eac3c9;
+    text-decoration: none;
+    transform: scale(1.1);
+}
+
+/* Prevent scrolling when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Make portfolio images have a pointer cursor to indicate they're clickable */
+.portfolio-image {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.portfolio-image:hover {
+    opacity: 0.9;
+    transform: scale(1.03);
 }
 
 /* Footer */

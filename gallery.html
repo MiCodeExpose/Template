@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dannys Beauty - Kompletná Galéria</title>
+    <link rel="icon" href="Photo/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/Own_Css/styles.css">
+    <style>
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 2rem 0;
+        }
+        
+        .gallery-item {
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            cursor: pointer;
+        }
+        
+        .back-button {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        .category-section {
+            margin-bottom: 3rem;
+        }
+        
+        .category-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header>
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="Photo/favicon.png" alt="Dannys Beauty Logo" class="logo-img">
+            <span class="logo-text">Dannys Beauty</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Domov</a></li>
+            <li><a href="index.html#about">O mne</a></li>
+            <li><a href="index.html#services">Služby</a></li>
+            <li><a href="index.html#portfolio">Portfólio</a></li>
+            <li><a href="index.html#reviews">Recenzie</a></li>
+            <li><a href="index.html#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Gallery Section -->
+<section class="gallery" style="margin-top: 100px;">
+    <h2>Kompletná Galéria</h2>
+    
+    <!-- Svadobné líčenie -->
+    <div class="category-section">
+        <h3>Svadobné líčenie</h3>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="Photo/Gallery/svadobne.jpg" alt="Svadobné líčenie" class="gallery-image">
+            </div>
+            <div class="gallery-item">
+                <img src="Photo/Gallery/svadobné1.jpg" alt="Svadobné líčenie" class="gallery-image">
+            </div>
+            <div class="gallery-item">
+                <img src="Photo/Gallery/svadobné.jpg" alt="Svadobné líčenie" class="gallery-image">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Denné líčenie -->
+    <div class="category-section">
+        <h3>Denné líčenie</h3>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="Photo/Gallery/denne1.jpg" alt="Denné líčenie" class="gallery-image">
+            </div>
+            <div class="gallery-item">
+                <img src="Photo/Gallery/denné.jpg" alt="Denné líčenie" class="gallery-image">
+            </div>
+            <div class="gallery-item">
+                <img src="Photo/Gallery/denné2.jpg" alt="Denné líčenie" class="gallery-image">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Večerné líčenie -->
+    <div class="category-section">
+        <h3>Večerné líčenie</h3>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="Photo/Gallery/vecerne.jpg" alt="Večerné líčenie" class="gallery-image">
+            </div>
+            <div class="gallery-item">
+                <img src="Photo/Gallery/vecerne1.jpg" alt="Večerné líčenie" class="gallery-image">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Art líčenie -->
+    <div class="category-section">
+        <h3>Art líčenie</h3>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="Photo/Gallery/art.jpg" alt="Art líčenie" class="gallery-image">
+            </div>
+            <div class="gallery-item">
+                <img src="Photo/Gallery/art1.jpg" alt="Art líčenie" class="gallery-image">
+            </div>
+            <div class="gallery-item">
+                <img src="Photo/Gallery/art2.jpg" alt="Art líčenie" class="gallery-image">
+            </div>
+            <div class="gallery-item">
+                <img src="Photo/Gallery/art3.jpg" alt="Art líčenie" class="gallery-image">
+            </div>
+            <div class="gallery-item">
+                <img src="Photo/Gallery/art5.jpg" alt="Art líčenie" class="gallery-image">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Other Photos -->
+    <div class="category-section">
+        <h3>Ďalšie fotografie</h3>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="Photo/Gallery/1.jpg" alt="Makeup Look" class="gallery-image">
+            </div>
+            <div class="gallery-item">
+                <img src="Photo/Gallery/2.jpg" alt="Makeup Look" class="gallery-image">
+            </div>
+            <div class="gallery-item">
+                <img src="Photo/Gallery/3.jpg" alt="Makeup Look" class="gallery-image">
+            </div>
+            <div class="gallery-item">
+                <img src="Photo/Gallery/4.jpg" alt="Makeup Look" class="gallery-image">
+            </div>
+            <div class="gallery-item">
+                <img src="Photo/Gallery/5.jpg" alt="Makeup Look" class="gallery-image">
+            </div>
+            <div class="gallery-item">
+                <img src="Photo/Gallery/6.jpg" alt="Makeup Look" class="gallery-image">
+            </div>
+            <div class="gallery-item">
+                <img src="Photo/Gallery/500704714_30084271797837919_3275752390855379768_n.jpg" alt="Makeup Look" class="gallery-image">
+            </div>
+        </div>
+    </div>
+    
+    <div class="back-button">
+        <a href="index.html" class="cta-button">Späť na hlavnú stránku</a>
+    </div>
+</section>
+
+<!-- Image Modal -->
+<div id="imageModal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="expandedImg">
+    <div id="imgCaption"></div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Dannys Beauty. Všetky práva vyhradené.</p>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Image Modal Functionality
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('expandedImg');
+        const imgCaption = document.getElementById('imgCaption');
+        const closeModal = document.getElementsByClassName('close-modal')[0];
+        const galleryImages = document.querySelectorAll('.gallery-image');
+
+        // Add click event to all gallery images
+        galleryImages.forEach(image => {
+            image.addEventListener('click', function() {
+                modal.style.display = 'block';
+                modalImg.src = this.src;
+                imgCaption.innerHTML = this.alt;
+
+                // Add active class to body to prevent scrolling
+                document.body.classList.add('modal-open');
+            });
+        });
+
+        // Close modal when clicking on X
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.classList.remove('modal-open');
+        });
+
+        // Close modal when clicking outside the image
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.classList.remove('modal-open');
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.style.display === 'block') {
+                modal.style.display = 'none';
+                document.body.classList.remove('modal-open');
+            }
+        });
+    });
+</script>
+</body>
+</html>
